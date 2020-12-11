@@ -1,0 +1,20 @@
+{
+  "name": "@ronan/cli",
+  "version": "1.0.0",
+  "description": "Command line interface for ronan work",
+  "bin": {
+    "ronan": "bin/index.js"
+  },
+  "types": "types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ronliruonan/ronan-cli.git",
+    "directory": "packages/@vue/cli"
+  },
+  "keywords": [
+    "ronan",
+    "cli"
+  ],
+  "author": "Ronan Li",
+  "license": "MIT"
+}
