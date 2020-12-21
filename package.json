@@ -7,5 +7,9 @@
   "license": "MIT",
   "devDependencies": {
     "lerna": "^3.22.1"
-  }
+  },
+  "name": "ronan-cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ronliruonan/ronan-cli.git"
 }
