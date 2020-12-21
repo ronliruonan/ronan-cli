@@ -1,15 +1,36 @@
 {
-  "private": true,
-  "workspaces": [
-    "packages/@ronan/*"
-  ],
-  "author": "Ronan <liruonan@hotmail.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "lerna": "^3.22.1"
-  },
   "name": "ronan-cli",
   "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/ronliruonan/ronan-cli.git"
+  "private": true,
+  "bin": {
+    "ronan": "bin/ronan.js",
+    "ronan-add": "bin/ronan-add.js"
+  },
+  "description": "personal work cli",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronliruonan/ronan-cli.git"
+  },
+  "keywords": [
+    "git",
+    "git-cli",
+    "git-flow"
+  ],
+  "author": "Ronan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ronliruonan/ronan-cli/issues"
+  },
+  "homepage": "https://github.com/ronliruonan/ronan-cli#readme",
+  "dependencies": {
+    "boxen": "^4.2.0",
+    "chalk": "^4.1.0",
+    "commander": "^6.2.1",
+    "inquirer": "^7.3.3",
+    "ora": "^5.1.0"
+  },
+  "devDependencies": {}
 }
