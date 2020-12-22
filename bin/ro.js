@@ -17,6 +17,7 @@ program
 
   .command('flow', 'new a local-repo branch from a target-repo branch')
   .command('pr', 'make a pr to target-repo')
+  .command('mr', 'make a mr to target-repo')
   .command('ui', 'ui operation')
   .command('start', 'new terminal to start your project')
   .command('open', 'open a project folder')
