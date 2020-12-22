@@ -1,10 +1,10 @@
 {
-  "name": "ronan-cli",
+  "name": "ro-cli",
   "version": "1.0.0",
   "private": true,
   "bin": {
-    "ronan": "bin/ronan.js",
-    "ronan-add": "bin/ronan-add.js"
+    "ro": "bin/ro.js",
+    "ro-add": "bin/ro-add.js"
   },
   "description": "personal work cli",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ronliruonan/ronan-cli.git"
+    "url": "git+https://github.com/ronliruonan/ro-cli.git"
   },
   "keywords": [
     "git",
@@ -22,9 +22,9 @@
   "author": "Ronan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ronliruonan/ronan-cli/issues"
+    "url": "https://github.com/ronliruonan/ro-cli/issues"
   },
-  "homepage": "https://github.com/ronliruonan/ronan-cli#readme",
+  "homepage": "https://github.com/ronliruonan/ro-cli#readme",
   "dependencies": {
     "boxen": "^4.2.0",
     "chalk": "^4.1.0",
