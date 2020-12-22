@@ -10,3 +10,5 @@ temp
 .versions
 .changelog
 package-lock.json
+
+cache

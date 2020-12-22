@@ -1,3 +1,3 @@
-const { spawn } = require('child_process')
+const { spawn } = require('child_process');
 
-module.exports = (cmd, cwd) => spawn(cmd, { cwd, shell: true, stdio: 'inherit' })
+module.exports = (cmd, cwd) => spawn(cmd, { cwd, shell: true, stdio: 'inherit' });
