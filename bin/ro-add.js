@@ -24,10 +24,19 @@ const cachePath = path.resolve(__dirname, '../cache/local-projects.json');
 const cacheProjects = require(cachePath); // []
 // asdf
 const { textRed, textCyanBright, textGreen, textCyan, textRedBright } = require('../cli-shared-utils/chalk');
-const { resolve } = require('path');
 
 // 定制问答
 let questions = [
+  {
+    type: 'input',
+    name: 'inputName',
+    message: 'project name:',
+    validate: (val) => {
+      const str = `${val}`.trim();
+      if (!str) return 'unexpected project name';
+      return true;
+    }
+  },
   {
     type: 'input',
     name: 'inputPath',
@@ -50,12 +59,11 @@ let questions = [
   },
   {
     type: 'input',
-    name: 'inputDesc',
-    default: 'nothing',
-    message: 'project desc:',
+    name: 'inputTargetGit',
+    message: 'target git repo',
     validate: (val) => {
       const str = `${val}`.trim();
-      if (!str) return 'unexpected desc';
+      if (!str) return 'unexpected git url';
       return true;
     }
   }
@@ -65,10 +73,14 @@ inquirer
   .prompt(questions)
   .then(answers => {
     // 获取问答内容
-    const { inputPath, inputDesc } = answers;
+    const { inputName, inputPath, inputTargetGit } = answers;
 
     // 更新json
-    [].push.call(cacheProjects, { localPath: inputPath, desc: inputDesc });
+    [].push.call(cacheProjects, {
+      projectName: inputName,
+      localPath: inputPath,
+      targetRepo: inputTargetGit
+    });
 
     // 加载图标
     const spinner = ora('写入中...');
@@ -79,6 +91,4 @@ inquirer
       if (err) throw err;
       spinner.succeed('写入 成功')
     });
-
-    // setTimeout(() => spinner.succeed('写入 成功'), 1000);
   });
