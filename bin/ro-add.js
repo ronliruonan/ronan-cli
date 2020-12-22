@@ -53,7 +53,7 @@ let questions = [
   {
     type: 'input',
     name: 'inputTargetGit',
-    message: 'target git repo',
+    message: 'target git repo:',
     validate: (val) => {
       const str = `${val}`.trim();
       if (!str) return 'unexpected git url';
