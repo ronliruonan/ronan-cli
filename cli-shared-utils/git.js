@@ -1,7 +1,6 @@
-const { stderr } = require('chalk');
 const shelljs = require('shelljs');
 
-async function existsGit (path) {
+async function existsLocalGit (path) {
   return new Promise(resolve => {
     shelljs.exec(
       'git status',
@@ -12,5 +11,5 @@ async function existsGit (path) {
 }
 
 module.exports = {
-  existsGit,
+  existsLocalGit,
 };

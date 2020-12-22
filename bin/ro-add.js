@@ -17,7 +17,7 @@ const ora = require('ora');
 const fs = require('fs');
 const path = require('path');
 // git 模块
-const { existsGit } = require('../cli-shared-utils/git');
+const { existsLocalGit } = require('../cli-shared-utils/git');
 const cd = require('../cli-shared-utils/cd');
 // cache projects
 const cachePath = path.resolve(__dirname, '../cache/local-projects.json');
@@ -52,7 +52,7 @@ let questions = [
       // Path 无效
       if (!fs.existsSync(str)) return textRed`not existed path`;
       // Path 无Git Repo
-      if (!await existsGit(str)) return textRed`not existed git repo`;
+      if (!await existsLocalGit(str)) return textRed`not existed git repo`;
       
       return true;
     }
