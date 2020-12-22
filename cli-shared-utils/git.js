@@ -1,5 +1,15 @@
 const shelljs = require('shelljs');
 
+async function gitShellFactory (path, cmd) {
+  return new Promise(resolve => {
+    shelljs.exec(
+      cmd,
+      { cwd: path, silent: true },
+      (code, stdout, stderr) => resolve({ code, stdout, stderr })
+    )
+  });
+}
+
 async function existsLocalGit (path) {
   return new Promise(resolve => {
     shelljs.exec(
@@ -10,17 +20,8 @@ async function existsLocalGit (path) {
   });
 }
 
-async function gitCurrentBranch (path) {
-  return new Promise(resolve => {
-    shelljs.exec(
-      'git branch --show-current',
-      { cwd: path, silent: true },
-      (code, stdout, stderr) => resolve({ code, stdout, stderr })
-    )
-  });
-}
-
 module.exports = {
   existsLocalGit,
-  gitCurrentBranch,
+  gitCurrentBranch: async (path) => gitShellFactory(path, 'git branch --show-current'),
+  gitLocalOrigin: async (path) => gitShellFactory(path, 'git remote -v'),
 };
