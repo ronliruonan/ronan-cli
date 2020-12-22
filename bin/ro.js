@@ -12,9 +12,11 @@ program
   .usage('<command> [options]');
 
 program
+  .command('add', `add project's local path`)
+  .command('list', 'list projects')
+
   .command('flow', 'new a local-repo branch from a target-repo branch')
-  .command('add', 'add project local path')
-  .command('merge/mr', 'merge request')
+  .command('pr', 'make a pr to target-repo')
   .command('ui', 'ui operation')
   .command('start', 'new terminal to start your project')
   .command('open', 'open a project folder')

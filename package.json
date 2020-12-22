@@ -4,7 +4,8 @@
   "private": true,
   "bin": {
     "ro": "bin/ro.js",
-    "ro-add": "bin/ro-add.js"
+    "ro-add": "bin/ro-add.js",
+    "ro-list": "bin/ro-list.js"
   },
   "description": "personal work cli",
   "scripts": {
