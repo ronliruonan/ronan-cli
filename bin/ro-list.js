@@ -5,12 +5,6 @@
  * win下无效，win自动根据文件类型调用解析器
  */
 
-const path = require('path');
-const cachePath = path.resolve(__dirname, '../cache/local-projects.json');
-const cacheProjects = require(cachePath); // []
-const { textRedBright } = require('../cli-shared-utils/chalk');
+const { cacheProjectsValid } = require('../cli-shared-utils/cache');
 
-// check array
-if (!Array.isArray(cacheProjects)) return console.log(textRedBright('cache projects were wrong'));
-
-console.table(cacheProjects);
+console.table(cacheProjectsValid());

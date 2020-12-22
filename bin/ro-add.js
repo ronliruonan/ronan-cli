@@ -5,25 +5,18 @@
  * win下无效，win自动根据文件类型调用解析器
  */
 
-const chalk = require('chalk');
-const shelljs = require('shelljs');
 // 交互模块
 const inquirer = require('inquirer');
-// 命令行模块
-// const { program } = require('commander');
 // ora 加载模块
 const ora = require('ora');
 // 文件操作模块
 const fs = require('fs');
-const path = require('path');
 // git 模块
 const { existsLocalGit } = require('../cli-shared-utils/git');
-const cd = require('../cli-shared-utils/cd');
 // cache projects
-const cachePath = path.resolve(__dirname, '../cache/local-projects.json');
-const cacheProjects = require(cachePath); // []
+const { cachePath, cacheProjects } = require('../cli-shared-utils/cache');
 // asdf
-const { textRed, textCyanBright, textGreen, textCyan, textRedBright } = require('../cli-shared-utils/chalk');
+const { textRed } = require('../cli-shared-utils/chalk');
 
 // 定制问答
 let questions = [
