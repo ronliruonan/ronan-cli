@@ -7,10 +7,13 @@ Feature     | Win32 | macOS | Ubuntu | Desc
 `ro`        |  ✔️   |   ❗   |   ❌  | 查看帮助 
 `ro add`    |  ✔️   |   ❗   |   ❌  | 添加项目配置
 `ro list`   |  ✔️   |   ❗   |   ❌  | 查看已保存的项目
-`ro mr`     |  ✔️   |   ❗   |   ❌  | 发起merge/pull request
-`ro pr`     |  ✔️   |   ❗   |   ❌  | 发起merge/pull request
-`ro open`   |  ✔️   |   ❗   |   ❌  | open such a project's folder
 `ro start`  |  ✔️   |   ❗   |   ❌  | `npm start` such a project
+`ro fork`   |  ✔️   |   ❗   |   ❌  | fork such branch from target repo
+`ro pr`     |  ✔️   |   ❗   |   ❌  | 发起merge/pull request
+`ro mr`     |  ✔️   |   ❗   |   ❌  | 发起merge/pull request
+`ro open`   |  ✔️   |   ❗   |   ❌  | open such a project's folder
+
+
 
 
 ## 整理一份脑图

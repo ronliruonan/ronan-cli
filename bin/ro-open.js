@@ -8,17 +8,28 @@
 const spawn = require('../cli-shared-utils/spawn');
 // 交互模块
 const inquirer = require('inquirer');
-const { cacheProjectsValid } = require('../cli-shared-utils/cache');
+const __projects__ = require('../cli-shared-utils/cache').cacheProjectsValid();
+const { program } = require('commander');
 
 (async () => {
-  const { inputVal } = await inquirer.prompt([{
+  program
+    .option('-fd, --folder', 'open with folder')
+    .option('-vs, --vscode', 'open with vscode');
+  program.parse(process.argv);
+
+  const { inputLocalPath } = await inquirer.prompt([{
     type: 'list',
     message: 'What do you want to open',
-    name: 'inputVal',
-    choices: [].map.call(cacheProjectsValid(), i => i.localPath),
+    name: 'inputLocalPath',
+    choices: [].map.call(__projects__, i => i.localPath),
     pageSize: 2
   }]);
 
-  spawn('start .', inputVal);
+  if (program.vscode) {
+    spawn('code ' + inputLocalPath);
+    return;
+  }
+
+  spawn('start .', inputLocalPath);
   // end
 })();
