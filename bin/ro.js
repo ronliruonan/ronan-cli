@@ -15,7 +15,7 @@ program
   .command('add', `add project's local path`)
   .command('list', 'list projects')
 
-  .command('flow', 'new a local-repo branch from a target-repo branch')
+  .command('fork', 'new a local-repo branch from a target-repo branch')
   .command('pr', 'make a pr to target-repo')
   .command('mr', 'make a mr to target-repo')
   .command('ui', 'ui operation')
