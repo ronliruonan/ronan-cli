@@ -11,9 +11,7 @@ Feature     | Win32 | macOS | Ubuntu | Desc
 `ro fork`   |  ✔️   |   ❗   |   ❌  | fork such branch from target repo
 `ro pr`     |  ✔️   |   ❗   |   ❌  | 发起merge/pull request
 `ro mr`     |  ✔️   |   ❗   |   ❌  | 发起merge/pull request
-`ro open`   |  ✔️   |   ❗   |   ❌  | open such a project's folder
-
-
+`ro open`   |  ✔️   |   ❗   |   ❌  | open such a project with folder/ vscode
 
 
 ## 整理一份脑图
