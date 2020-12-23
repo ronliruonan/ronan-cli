@@ -11,7 +11,7 @@ const spawn = require('../cli-shared-utils/spawn');
 const inquirer = require('inquirer');
 // 文件模块
 const { textRedBright, textCyan } = require('../cli-shared-utils/chalk');
-const { gitCurrentBranch } = require('../cli-shared-utils/git');
+const { gitBranchCurrent } = require('../cli-shared-utils/git');
 
 const { cacheProjectsValid } = require('../cli-shared-utils/cache');
 
@@ -25,7 +25,7 @@ const { cacheProjectsValid } = require('../cli-shared-utils/cache');
   }]);
 
   // current git branch
-  const res = await gitCurrentBranch(inputVal);
+  const res = await gitBranchCurrent(inputVal);
   if (res.code !== 0) throw res.stderr;
 
   const { inputConfirm } = await inquirer.prompt([{
