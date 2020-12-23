@@ -14,7 +14,9 @@ const chalk = require('chalk');
 module.exports = {
   textRed: msg => chalk.red(msg),
   textCyan: msg => chalk.cyan(msg),
+  textYellow: msg => chalk.yellow(msg),
   textGreen: msg => chalk.green(msg),
   textRedBright: msg => chalk.redBright(msg),
   textCyanBright: msg => chalk.cyanBright(msg),
+  textGray: msg => chalk.gray(msg),
 };
