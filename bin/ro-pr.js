@@ -37,10 +37,7 @@ const { cacheProjectsValid } = require('../cli-shared-utils/cache');
 
   if (!inputConfirm) return shelljs.exit(1);
 
-  const resOrigin = await gitLocalOrigin(inputVal);
-  if (resOrigin.code !== 0) throw resOrigin.stderr;
-
-  const originGit = resOrigin.stdout.split(' ')[0].split('\t')[1];
+  const originGit = await gitLocalOrigin(inputVal);
 
   const url = `${originGit}`.replace('.git', '/merge_requests/new?') + 'merge_request%5Bsource_branch%5D=' + curLocalBranch;
 
