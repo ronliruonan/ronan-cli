@@ -1,4 +1,5 @@
 const shelljs = require('shelljs');
+const { ROCLIUPSTREAM } = require('../cli-const/index');
 
 /**
  * 普通git 命令
@@ -13,11 +14,45 @@ async function gitShellFactory (path, cmd) {
   });
 }
 /**
- * 查看当前分支
+ * git remote add upstream git@git.com
  */
-const gitCurrentBranch = async (path) => gitShellFactory(path, 'git branch --show-current');
+const gitRemoteAdd = async (path, targetRepo) => gitShellFactory(path, `git remote add ${ROCLIUPSTREAM} ${targetRepo}`);
 /**
- * 查看 git remote
+ * git remote remove upstream
+ */
+const gitRemoteRemove = async (path) => gitShellFactory(path, 'git remote remove ' + ROCLIUPSTREAM);
+/**
+ * git fetch upsteam
+ */
+const gitFetchRepo = async (path, targetRepo) => gitShellFactory(path, 'git fetch ' + targetRepo);
+/**
+ * git branch --show-current
+ */
+const gitBranchCurrent = async (path) => gitShellFactory(path, 'git branch --show-current');
+/**
+ * git checkout
+ */
+const gitCheckout = async (path, localBranch, targetBranch) => gitShellFactory(path, `git checkout -b ${localBranch} ${targetBranch}`);
+
+const gitCheckoutSpawn = async (path, localBranch, targetBranch) => new Promise(resolve => {
+  const { spawn } = require('child_process');
+  const sp = spawn(`git checkout -b ${localBranch} ${targetBranch}`, { cwd: path, shell: true, stdio: 'inherit' });
+  sp.on('close', code => {
+    resolve({ code });
+  });
+});
+
+/**
+ * git push -u origin branch
+ */
+const gitPushUOrigin = async (path, branch) => gitShellFactory(path, `git push -u origin ${branch ? branch : ''}`);
+
+/**
+ * git branch -r
+ */
+const gitBranchR = async (path) => gitShellFactory(path, 'git branch -r');
+/**
+ * git remote -v
  */
 const gitRemoteV = async (path) => gitShellFactory(path, 'git remote -v');
 /**
@@ -47,6 +82,13 @@ async function existsLocalGit (path) {
 module.exports = {
   existsLocalGit,
   gitRemoteV,
-  gitCurrentBranch,
+  gitRemoteRemove,
+  gitRemoteAdd,
+  gitFetchRepo,
+  gitBranchCurrent,
   gitLocalOrigin,
+  gitBranchR,
+  gitCheckout,
+  gitPushUOrigin,
+  gitCheckoutSpawn,
 };
