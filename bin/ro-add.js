@@ -23,7 +23,7 @@ let questions = [
   {
     type: 'input',
     name: 'inputName',
-    message: 'project name:',
+    message: 'What\'s your project name:',
     validate: (val) => {
       const str = `${val}`.trim();
       if (!str) return 'unexpected project name';
@@ -33,7 +33,7 @@ let questions = [
   {
     type: 'input',
     name: 'inputPath',
-    message: 'project local path:',
+    message: 'What\'s the local path:',
     default: 'D:/GitHub/vue-cli',
     validate: async (val) => {
       const str = `${val}`.trim();
@@ -46,19 +46,26 @@ let questions = [
       if (!fs.existsSync(str)) return textRed`not existed path`;
       // Path 无Git Repo
       if (!await existsLocalGit(str)) return textRed`not existed git repo`;
-      
+
       return true;
     }
   },
   {
     type: 'input',
     name: 'inputTargetGit',
-    message: 'target git repo:',
+    message: 'What\'s the target git repo:',
     validate: (val) => {
       const str = `${val}`.trim();
       if (!str) return 'unexpected git url';
       return true;
     }
+  },
+  {
+    type: 'list',
+    message: 'What\'s the git plateform',
+    name: 'inputGitPlateform',
+    choices: Object.values(require('../cli-enums/gitPlateform')),
+    pageSize: 2
   }
 ];
 
@@ -66,13 +73,14 @@ inquirer
   .prompt(questions)
   .then(answers => {
     // 获取问答内容
-    const { inputName, inputPath, inputTargetGit } = answers;
+    const { inputName, inputPath, inputTargetGit, inputGitPlateform } = answers;
 
     // 更新json
     [].push.call(cacheProjects, {
       projectName: inputName,
       localPath: inputPath,
-      targetRepo: inputTargetGit
+      targetRepo: inputTargetGit,
+      gitPlateform: inputGitPlateform
     });
 
     // 加载图标
