@@ -9,21 +9,25 @@ const shelljs = require('shelljs');
 const spawn = require('../cli-shared-utils/spawn');
 // 交互模块
 const inquirer = require('inquirer');
-// 文件模块
+const GitPlateform = require('../cli-enums/gitPlateform');
 const { textRedBright, textCyan } = require('../cli-shared-utils/chalk');
+const { logStep } = require('../cli-shared-utils/logStep');
 const { gitBranchCurrent, gitLocalOrigin } = require('../cli-shared-utils/git');
 
 const { cacheProjectsValid } = require('../cli-shared-utils/cache');
+const __projects__ = cacheProjectsValid();
 
 (async () => {
+  logStep`step1: select project`;
   const { inputVal } = await inquirer.prompt([{
     type: 'list',
     message: 'Which do you want to pr',
     name: 'inputVal',
-    choices: [].map.call(cacheProjectsValid(), i => i.localPath),
+    choices: [].map.call(__projects__, i => i.localPath),
     pageSize: 2
   }]);
 
+  logStep`step2: check branch`;
   // current git branch
   const res = await gitBranchCurrent(inputVal);
   if (res.code !== 0) throw res.stderr;
@@ -37,11 +41,21 @@ const { cacheProjectsValid } = require('../cli-shared-utils/cache');
 
   if (!inputConfirm) return shelljs.exit(1);
 
+  logStep`step3: check git plateform`;
+  let url = '';
+
   const originGit = await gitLocalOrigin(inputVal);
+  const existedProject = [].find.call(__projects__, i => i.localPath === inputVal);
 
-  const url = `${originGit}`.replace('.git', '/merge_requests/new?') + 'merge_request%5Bsource_branch%5D=' + curLocalBranch;
+  const { gitPlateform, targetRepo } = existedProject;
 
-  // spawn('npm start', inputVal);
+  if (gitPlateform === GitPlateform.GitLab) {
+    url = `${originGit}`.replace('.git', '/merge_requests/new?') + 'merge_request%5Bsource_branch%5D=' + curLocalBranch;
+  } else if (gitPlateform === GitPlateform.Git) {
+    // https://github.com/ronan-try/tying-cli/compare/main...ronliruonan:main
+    url = `${targetRepo}`.replace('.git', '/compare/main...' + originGit.replace('https://github.com/', '').replace(/(\/(\S*))/,'') + ':' + curLocalBranch);
+  }
+
   shelljs.exec('start ' + url);
   // end
 })();
