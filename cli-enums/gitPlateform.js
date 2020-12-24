@@ -1,4 +1,5 @@
 module.exports = {
-  Git: 'git',
-  GitLab: 'gitlab'
+  GitHub: 'github',
+  GitLab: 'gitlab',
+  Gitee: 'gitee',
 };

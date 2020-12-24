@@ -65,7 +65,6 @@ let questions = [
     message: 'What\'s the git plateform',
     name: 'inputGitPlateform',
     choices: Object.values(require('../cli-enums/gitPlateform')),
-    pageSize: 2
   }
 ];
 

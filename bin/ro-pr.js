@@ -51,7 +51,7 @@ const __projects__ = cacheProjectsValid();
 
   if (gitPlateform === GitPlateform.GitLab) {
     url = `${originGit}`.replace('.git', '/merge_requests/new?') + 'merge_request%5Bsource_branch%5D=' + curLocalBranch;
-  } else if (gitPlateform === GitPlateform.Git) {
+  } else if (gitPlateform === GitPlateform.GitHub) {
     // https://github.com/ronan-try/tying-cli/compare/main...ronliruonan:main
     url = `${targetRepo}`.replace('.git', '/compare/main...' + originGit.replace('https://github.com/', '').replace(/(\/(\S*))/,'') + ':' + curLocalBranch);
   }
