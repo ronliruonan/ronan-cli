@@ -22,7 +22,6 @@ const { program } = require('commander');
     message: 'What do you want to open',
     name: 'inputLocalPath',
     choices: [].map.call(__projects__, i => i.localPath),
-    pageSize: 2
   }]);
 
   if (program.vscode) {
