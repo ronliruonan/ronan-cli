@@ -6,6 +6,7 @@
  */
 
 const spawn = require('../cli-shared-utils/spawn');
+const shelljs = require('shelljs');
 // 交互模块
 const inquirer = require('inquirer');
 const __projects__ = require('../cli-shared-utils/cache').cacheProjectsValid();
@@ -25,10 +26,12 @@ const { program } = require('commander');
   }]);
 
   if (program.vscode) {
-    spawn('code ' + inputLocalPath);
+    // spawn('code ' + inputLocalPath);
+    shelljs.exec('code ' + inputLocalPath);
     return;
   }
 
-  spawn('start .', inputLocalPath);
+  // spawn('start .', inputLocalPath);
+  shelljs.exec('start .' + inputLocalPath);
   // end
 })();
