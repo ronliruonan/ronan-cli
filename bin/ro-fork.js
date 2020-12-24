@@ -36,7 +36,6 @@ const { ROCLIUPSTREAM } = require('../cli-const/index');
     message: 'Which project do you want',
     name: 'inputLocalPath',
     choices: [].map.call(cacheProjectsValid(), i => i.localPath),
-    pageSize: 2
   }]);
 
   // 本地仓库git repo
@@ -112,7 +111,6 @@ const { ROCLIUPSTREAM } = require('../cli-const/index');
       message: 'Which target branches: ',
       name: 'inputTargetBranch',
       choices: TargetBranches,
-      pageSize: 2
     },
     {
       type: 'input',
