@@ -28,6 +28,8 @@ const { program } = require('commander');
   if (program.vscode) {
     // spawn('code ' + inputLocalPath);
     shelljs.exec('code ' + inputLocalPath);
+    // new method
+    // shelljs.exec('code .', { cwd: inputLocalPath });
     return;
   }
 
