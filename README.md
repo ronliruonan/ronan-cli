@@ -53,3 +53,7 @@ npm whoami
 // note: 使用用户名登录，非邮箱地址
 npm login
 ```
+
+## vscode api
+https://code.visualstudio.com/docs/editor/command-line
+vscode://file/{full path to project}/
