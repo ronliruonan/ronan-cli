@@ -59,9 +59,8 @@ https://code.visualstudio.com/docs/editor/command-line
 vscode://file/{full path to project}/
 
 > macOS
->> `open vscode://file/usr/local/`    
-
->> GitHub Desktop 牛啤使用installPath来催动运行，通过npm`path`包来实现
+1. terminal：`open vscode://file/usr/local/`    
+2. GitHub Desktop： 牛啤使用installPath来催动运行，通过npm`path`包来实现
 
 > win32
 >> `code c:/`    
