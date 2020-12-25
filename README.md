@@ -57,3 +57,12 @@ npm login
 ## vscode api
 https://code.visualstudio.com/docs/editor/command-line
 vscode://file/{full path to project}/
+
+> macOS
+>> open vscode://file/usr/local/
+
+> win32
+>> code c:/
+
+> linux
+>> code usr/local/
