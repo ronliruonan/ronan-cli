@@ -60,6 +60,7 @@ vscode://file/{full path to project}/
 
 > macOS
 >> `open vscode://file/usr/local/`    
+
 >> GitHub Desktop 牛啤使用installPath来催动运行，通过npm`path`包来实现
 
 > win32
