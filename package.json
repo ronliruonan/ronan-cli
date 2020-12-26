@@ -2,6 +2,9 @@
   "name": "ronan-cli",
   "version": "1.0.0",
   "private": true,
+  "bin": {
+    "ronan": "bin/ronan.js"
+  },
   "description": "personal work cli",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
