@@ -27,7 +27,7 @@ const cacheProjects = require(cachePath);
  */
 const  cacheProjectsValid = () => {
   if (cacheProjects.length < 1) {
-    console.log(textRedBright('cache projects is empty,'), 'please `ro add`');
+    console.log(textRedBright('cache projects is empty,'), 'please `ronan add`');
     shelljs.exit(1);
   }
 

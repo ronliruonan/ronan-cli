@@ -1,17 +1,17 @@
-# ro-cli
+# ronan-cli
 
 ## 功能概览2
 
 Feature     | Win32 | macOS | Ubuntu | Desc 
 :-          |  :-:  |  :-:  |   :-:  | :-
-`ro`        |  ✔️   |   ❗   |   ❌  | 查看帮助 
-`ro add`    |  ✔️   |   ❗   |   ❌  | 添加项目配置
-`ro list`   |  ✔️   |   ❗   |   ❌  | 查看已保存的项目
-`ro start`  |  ✔️   |   ❗   |   ❌  | `npm start` such a project
-`ro fork`   |  ✔️   |   ❗   |   ❌  | fork such branch from target repo
-`ro pr`     |  ✔️   |   ❗   |   ❌  | 发起merge/pull request
-`ro mr`     |  ✔️   |   ❗   |   ❌  | 发起merge/pull request
-`ro open`   |  ✔️   |   ❗   |   ❌  | open such a project with folder/ vscode
+`ronan`        |  ✔️   |   ❗   |   ❌  | 查看帮助 
+`ronan add`    |  ✔️   |   ❗   |   ❌  | 添加项目配置
+`ronan list`   |  ✔️   |   ❗   |   ❌  | 查看已保存的项目
+`ronan start`  |  ✔️   |   ❗   |   ❌  | `npm start` such a project
+`ronan fork`   |  ✔️   |   ❗   |   ❌  | fork such branch from target repo
+`ronan pr`     |  ✔️   |   ❗   |   ❌  | 发起merge/pull request
+`ronan mr`     |  ✔️   |   ❗   |   ❌  | 发起merge/pull request
+`ronan open`   |  ✔️   |   ❗   |   ❌  | open such a project with folder/ vscode
 
 
 ## 整理一份脑图

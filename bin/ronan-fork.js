@@ -58,7 +58,7 @@ const { ROCLIUPSTREAM } = require('../cli-const/index');
 
   if (!(inputIsPersonal && inputIsTarget)) {
     console.log();
-    console.log(textYellow('repo 存在质疑，可通过\'ro update\' 更新'));
+    console.log(textYellow('repo 存在质疑，可通过\'ronan update\' 更新'));
     shelljs.exit(1);
   }
 
