@@ -1,0 +1,1 @@
+cache dictionay 存放.json等数据配置文件

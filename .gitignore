@@ -11,4 +11,4 @@ temp
 .changelog
 package-lock.json
 
-cache
+cache/*.json
