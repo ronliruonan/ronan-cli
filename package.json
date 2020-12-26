@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "bin": {
-    "ronan": "bin/ronan.js",
+    "ronan": "bin/ronan.js"
   },
   "description": "personal work cli",
   "scripts": {
