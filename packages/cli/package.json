@@ -2,13 +2,10 @@
   "name": "ro-cli",
   "version": "1.0.0",
   "private": true,
-  "workspaces": [
-    "codemods/*",
-    "eslint/*",
-    "packages/*",
-    "test/esm",
-    "test/runtime-integration/*"
-  ],
+  "bin": {
+    "ro": "bin/ro.js"
+  },
+  "description": "personal work cli",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,6 +13,11 @@
     "type": "git",
     "url": "git+https://github.com/ronliruonan/ro-cli.git"
   },
+  "keywords": [
+    "git",
+    "git-cli",
+    "git-flow"
+  ],
   "author": "Ronan",
   "license": "MIT",
   "bugs": {
