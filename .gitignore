@@ -10,5 +10,5 @@ temp
 .changelog
 package-lock.json
 
-packages/cli-cache/*.json
+*.hidden.json
 packages/test
