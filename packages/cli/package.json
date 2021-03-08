@@ -1,9 +1,8 @@
 {
-  "name": "ro-cli",
+  "name": "@ro/cli",
   "version": "1.0.0",
-  "private": true,
   "bin": {
-    "ro": "bin/ro.js"
+    "ro": "./bin/ro.js"
   },
   "description": "personal work cli",
   "scripts": {
@@ -14,8 +13,8 @@
     "url": "git+https://github.com/ronliruonan/ro-cli.git"
   },
   "keywords": [
-    "git",
-    "git-cli",
+    "ro",
+    "ro-cli",
     "git-flow"
   ],
   "author": "Ronan",
