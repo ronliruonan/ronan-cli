@@ -5,6 +5,6 @@
  * win下无效，win自动根据文件类型调用解析器
  */
 
- const mr = require('./ronan-pr');
+ const mr = require('./ro-pr');
 
  module.exports = mr;
