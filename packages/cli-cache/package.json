@@ -1,0 +1,14 @@
+{
+  "name": "@ro/cli-cache",
+  "version": "1.0.0",
+  "description": "handler current cache",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cache"
+  ],
+  "author": "Ronan",
+  "license": "MIT"
+}
