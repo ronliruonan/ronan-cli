@@ -2,7 +2,6 @@ node_modules
 .DS_Store
 design
 *.log
-packages/test
 
 temp
 .vuerc
@@ -11,4 +10,5 @@ temp
 .changelog
 package-lock.json
 
-cli-cache/*.json
+packages/cli-cache/*.json
+packages/test
