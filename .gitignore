@@ -3,7 +3,7 @@ node_modules
 design
 *.log
 packages/test
-dist
+
 temp
 .vuerc
 .version
@@ -11,4 +11,4 @@ temp
 .changelog
 package-lock.json
 
-cache/*.json
+cli-cache/*.json
