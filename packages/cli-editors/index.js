@@ -19,6 +19,7 @@ function openWithVsCode (fullPathProject) {
 
   throw textRed('unexpected os platform');
 }
+module.exports.openWithVsCode = openWithVsCode;
 
 function openWithFolder (fullPathProject) {
   const platform = require('os').platform();
@@ -32,6 +33,8 @@ function openWithFolder (fullPathProject) {
 
   throw textRed('unexpected os platform');
 }
+module.exports.openWithFolder = openWithFolder;
+
 
 function openWithBroswer (url) {
   const platform = require('os').platform();
@@ -45,5 +48,4 @@ function openWithBroswer (url) {
 
   throw textRed('unexpected os platform');
 }
-
-module.exports = { openWithVsCode, openWithFolder, openWithBroswer };
+module.exports.openWithBroswer = openWithBroswer;
