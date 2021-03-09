@@ -4,3 +4,5 @@ module.exports.OSPlatform = require('./lib/OSPlatform');
 module.exports.Ports = require('./lib/Ports');
 module.exports.Path = require('./lib/Path');
 module.exports.WSMsgType = require('./lib/WSMsgType');
+
+// cli-const   跟 cli-enums 重复了
