@@ -1,4 +1,4 @@
-const ROCLIUPSTREAM = 'rocli_upstream';
-module.exports = {
-  ROCLIUPSTREAM,
-};
+/** ro cli 标记的git remote name */
+const RoCliGitRemoteName = 'ro_cli_upstream';
+
+module.exports.RoCliGitRemoteName = RoCliGitRemoteName;
